@@ -1,8 +1,11 @@
 package com.devsuperior.dscommerce.entities;
 
 
+import jakarta.persistence.EmbeddedId;
+
 public class OrderItem {
 
+    @EmbeddedId
     private OrderItemPK id = new OrderItemPK();
 
     private Integer quantity;
