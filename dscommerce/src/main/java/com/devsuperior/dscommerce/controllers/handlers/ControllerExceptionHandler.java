@@ -14,6 +14,7 @@ import java.time.Instant;
 @ControllerAdvice
 public class ControllerExceptionHandler {
 
+    //erro 404
     @ExceptionHandler(ResourceNotFoundException.class)
     public ResponseEntity<CustomError> resourceNotFound (ResourceNotFoundException e, HttpServletRequest request) {
         HttpStatus status = HttpStatus.NOT_FOUND;
@@ -21,6 +22,7 @@ public class ControllerExceptionHandler {
         return ResponseEntity.status(status).body(err);
     }
 
+    //erro 400
     @ExceptionHandler(DatabaseException.class)
     public ResponseEntity<CustomError> database (DatabaseException e, HttpServletRequest request) {
         HttpStatus status = HttpStatus.BAD_REQUEST;
